@@ -6,7 +6,7 @@ const faqData = [
     },
     {
         title: "How to get free robux?",
-        content: "To get free robux, you need to.. ."
+        content: "To get free robux, you need to..."
     }
 ];
 
