@@ -47,3 +47,6 @@ submitOtp.addEventListener("click", () => {
         otpMessage.style.color = "red";
     }
 });
+
+
+
