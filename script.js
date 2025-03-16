@@ -1,16 +1,16 @@
 // Customizable Accordions
 const accordionData = [
     {
-        title: "What is Domain Method?",
-        content: "The Domain Method is a technique used to..."
+        title: "What is the Domain Method?",
+        content: "It is a method where you can make infinite domain with no investment!"
     },
     {
-        title: "How to get free robux?",
-        content: "To get free robux, you need to..."
+        title: "Where is the Domain Panel?",
+        content: "The panel is in a trusted provider called "Hostinger"."
     },
     {
-        title: "What is OTP?",
-        content: "OTP stands for One Time Password..."
+        title: "Is the method legal?",
+        content: "Yes, the method is completely legal unless you spam create domains."
     }
 ];
 
