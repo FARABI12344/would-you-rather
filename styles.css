@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: bold;
     background-color: #111; /* Default dark mode */
     color: #fff;
     line-height: 1.6;
@@ -90,10 +91,57 @@ body.light-mode .accordion-content {
     color: #333;
 }
 
+/* Title */
+.title {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ask-button, .live-chat-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 10px;
+}
+
+.ask-button {
+    background-color: #8a2be2; /* Purple */
+    color: #fff;
+}
+
+.live-chat-button {
+    background-color: #ff1493; /* Pink */
+    color: #fff;
+}
+
+.ask-button:hover, .live-chat-button:hover {
+    transform: scale(1.05);
+}
+
+.ask-button:hover {
+    background-color: #7b1fa2; /* Darker Purple */
+}
+
+.live-chat-button:hover {
+    background-color: #e91e63; /* Darker Pink */
+}
+
 /* Accordion Container */
 .accordion-container {
     max-width: 800px;
-    margin: 100px auto;
+    margin: 0 auto;
     padding: 20px;
 }
 
