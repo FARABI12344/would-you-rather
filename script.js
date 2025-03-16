@@ -2,15 +2,27 @@
 const accordionData = [
     {
         title: "What is the Domain Method?",
-        content: "It is a method where you can make infinite domain with no investment!"
+        content: "It is a method where you can create infinite domains with no investment!"
     },
     {
         title: "Where is the Domain Panel?",
-        content: "The panel is in a trusted provider called "Hostinger"."
+        content: "The panel is provided by a trusted service called Hostinger."
     },
     {
         title: "Is the method legal?",
-        content: "Yes, the method is completely legal unless you spam create domains."
+        content: "Yes, the method is completely legal as long as you do not spam-create domains."
+    },
+    {
+        title: "Does the method come with a warranty?",
+        content: "Yes, it comes with a 2-month warranty."
+    },
+    {
+        title: "Can I transfer the domain to Shopify, GitHub, HubSpot, WordPress, etc.?",
+        content: "Yes, Hostinger allows you to transfer the domain to any other provider."
+    },
+    {
+        title: "Does the method include a panel?",
+        content: "Yes, the method includes access to the Hostinger panel."
     }
 ];
 
