@@ -1,5 +1,5 @@
-// Customizable FAQ Accordions
-const faqData = [
+// Customizable Accordions
+const accordionData = [
     {
         title: "What is Domain Method?",
         content: "The Domain Method is a technique used to..."
@@ -7,88 +7,52 @@ const faqData = [
     {
         title: "How to get free robux?",
         content: "To get free robux, you need to..."
+    },
+    {
+        title: "What is OTP?",
+        content: "OTP stands for One Time Password..."
     }
 ];
 
-const faqContainer = document.querySelector(".faq-container");
+const accordionContainer = document.querySelector(".accordion-container");
 
-faqData.forEach((faq) => {
-    const accordion = document.createElement("div");
-    accordion.classList.add("accordion");
+accordionData.forEach((accordion) => {
+    const accordionElement = document.createElement("div");
+    accordionElement.classList.add("accordion");
 
     const header = document.createElement("div");
     header.classList.add("accordion-header");
     header.innerHTML = `
-        <span>${faq.title}</span>
+        <span>${accordion.title}</span>
         <span class="icon">+</span>
     `;
 
     const content = document.createElement("div");
     content.classList.add("accordion-content");
-    content.innerHTML = `<p>${faq.content}</p>`;
+    content.innerHTML = `<p>${accordion.content}</p>`;
 
-    accordion.appendChild(header);
-    accordion.appendChild(content);
-    faqContainer.appendChild(accordion);
+    accordionElement.appendChild(header);
+    accordionElement.appendChild(content);
+    accordionContainer.appendChild(accordionElement);
 
     header.addEventListener("click", () => {
-        accordion.classList.toggle("active");
+        accordionElement.classList.toggle("active");
         const icon = header.querySelector(".icon");
-        icon.textContent = accordion.classList.contains("active") ? "-" : "+";
+        icon.textContent = accordionElement.classList.contains("active") ? "-" : "+";
     });
-});
-
-// OTP Section Functionality
-const otpSection = document.getElementById("otp-section");
-const otpInput = document.getElementById("otp-input");
-const submitOtp = document.getElementById("submit-otp");
-const otpMessage = document.getElementById("otp-message");
-
-// Customizable OTP (One Time Password)
-const correctOTP = "123456"; // Change this to your desired OTP
-let isOTPUsed = false; // Track if OTP has been used
-
-// Show OTP Section on Scroll
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-        otpSection.classList.remove("hidden");
-    }
-});
-
-// Validate OTP
-submitOtp.addEventListener("click", () => {
-    if (isOTPUsed) {
-        otpMessage.textContent = "OTP has already been used!";
-        otpMessage.style.color = "red";
-        return;
-    }
-
-    const enteredOTP = otpInput.value.trim();
-
-    if (enteredOTP === correctOTP) {
-        otpMessage.textContent = "Correct OTP! Redirecting...";
-        otpMessage.style.color = "green";
-        isOTPUsed = true; // Mark OTP as used
-        setTimeout(() => {
-            window.location.href = "https://only.goodthings.live/";
-        }, 2000);
-    } else {
-        otpMessage.textContent = "Wrong OTP! Please try again.";
-        otpMessage.style.color = "red";
-    }
 });
 
 // Dark Mode Toggle
 const modeToggle = document.getElementById("mode-toggle");
 
 modeToggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    document.body.classList.toggle("light-mode");
+    localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
 });
 
 // Apply Theme on Load
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.body.classList.add(savedTheme + "-mode");
-    modeToggle.checked = savedTheme === "dark";
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(savedTheme === "light" ? "light-mode" : "dark-mode");
+    modeToggle.checked = savedTheme === "light";
 });
