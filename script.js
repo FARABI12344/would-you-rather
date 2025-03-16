@@ -56,3 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add(savedTheme === "light" ? "light-mode" : "dark-mode");
     modeToggle.checked = savedTheme === "light";
 });
+
+
