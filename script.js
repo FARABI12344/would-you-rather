@@ -2,7 +2,7 @@
 const accordionData = [
     {
         title: "What is the Domain Method?",
-        content: "It is a method where you can create infinite domains with no investment!"
+        content: "It is a method that is used to get an infinite domain (www.example.com) with literally no investment. This method is not leaked and will be provided to a very limited number of people."
     },
     {
         title: "Where is the Domain Panel?",
@@ -14,7 +14,7 @@ const accordionData = [
     },
     {
         title: "Does the method come with a warranty?",
-        content: "Yes, it comes with a 2-month warranty."
+        content: "Yes, it comes with a 2-month warranty. For full warranty, price can go higher."
     },
     {
         title: "Can I transfer the domain to Shopify, GitHub, HubSpot, WordPress, etc.?",
