@@ -114,6 +114,8 @@ body.light-mode .accordion-content {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .ask-button {
