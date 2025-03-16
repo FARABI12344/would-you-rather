@@ -7,30 +7,32 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #111; /* Default dark mode */
+    color: #fff;
     line-height: 1.6;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* Fade-in Animation for Page Load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.title {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
+body {
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Dark Mode Toggle */
 .toggle-container {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 1000;
 }
 
 #mode-toggle {
@@ -40,11 +42,12 @@ body {
 .toggle-label {
     width: 50px;
     height: 25px;
-    background: #ccc;
+    background: #444;
     border-radius: 50px;
     display: inline-block;
     position: relative;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .toggle-label::after {
@@ -67,48 +70,51 @@ body {
     left: 27px;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #111;
-    color: #fff;
-}
-
-body.dark-mode .accordion {
-    background-color: #333;
-    border-color: #444;
-}
-
-body.dark-mode .accordion-header {
-    background-color: #444;
-    color: #fff;
-}
-
-body.dark-mode .accordion-content {
-    color: #fff;
-}
-
-body.dark-mode .otp-section {
-    background-color: #333;
-    border-color: #444;
-}
-
-body.dark-mode #otp-input {
-    background-color: #444;
-    color: #fff;
-    border-color: #555;
-}
-
-/* FAQ Accordion */
-.faq-container {
-    margin-bottom: 40px;
-}
-
-.accordion {
+/* Light Mode */
+body.light-mode {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    color: #333;
+}
+
+body.light-mode .accordion {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+}
+
+body.light-mode .accordion-header {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+body.light-mode .accordion-content {
+    color: #333;
+}
+
+/* Accordion Container */
+.accordion-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+/* Accordion */
+.accordion {
+    background-color: #222;
+    border: 2px solid #444;
+    border-radius: 10px;
+    margin-bottom: 15px;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion:hover {
+    border-color: #8a2be2; /* Purple glow in dark mode */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+body.light-mode .accordion:hover {
+    border-color: #ff1493; /* Pink glow in light mode */
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
 }
 
 .accordion-header {
@@ -117,12 +123,12 @@ body.dark-mode #otp-input {
     align-items: center;
     padding: 15px;
     cursor: pointer;
-    background-color: #f9f9f9;
+    background-color: #333;
     transition: background-color 0.3s ease;
 }
 
 .accordion-header:hover {
-    background-color: #f1f1f1;
+    background-color: #444;
 }
 
 .accordion-header .icon {
@@ -149,56 +155,4 @@ body.dark-mode #otp-input {
 
 .accordion.active .icon {
     content: "-";
-}
-
-/* OTP Section */
-.otp-section {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.otp-section.hidden {
-    display: none;
-}
-
-.otp-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.warning {
-    color: #ff4444;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-#otp-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#submit-otp {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#submit-otp:hover {
-    background-color: #0056b3;
-}
-
-#otp-message {
-    margin-top: 10px;
-    font-weight: bold;
 }
