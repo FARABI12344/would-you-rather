@@ -5,48 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Not Found</title>
     <style>
+        @font-face {
+            font-family: 'Panton';
+            src: url('assets/Panton.ttf') format('truetype');
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Panton', sans-serif;
             text-align: center;
             background-color: #1e1e1e;
             color: white;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-        }
-        h1 {
-            font-size: 80px;
             margin: 0;
         }
-        p {
-            font-size: 20px;
-            margin: 10px 0;
+        h1 {
+            color: red;
+            font-size: 60px;
+            margin-bottom: 10px;
         }
-        a {
-            color: #00d9ff;
+        p {
+            font-size: 22px;
+        }
+        .button {
+            background-color: #9b59b6;
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
             text-decoration: none;
-            font-size: 18px;
-            border: 2px solid #00d9ff;
-            padding: 10px 20px;
-            border-radius: 5px;
             display: inline-block;
             margin-top: 20px;
+            transition: 0.3s;
         }
-        a:hover {
-            background-color: #00d9ff;
-            color: #1e1e1e;
+        .button:hover {
+            box-shadow: 0px 0px 20px #e91e63;
+        }
+        .link {
+            color: white;
+            font-size: 18px;
+            margin-top: 15px;
+            display: block;
+            text-decoration: none;
+        }
+        .link:hover {
+            color: #ff80bf;
+            text-shadow: 0px 0px 10px #ff80bf;
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>Oops! The page you are looking for does not exist.</p>
-    <a href="/">Go Home</a>
+    <h1>404 ERROR</h1>
+    <p>Looks like you're lost.</p>
+    <a href="/" class="button" onclick="notify('Redirecting to Home...')">GO TO HOME</a>
+    <a href="https://farabi.me" class="link" onclick="notify('Redirecting to farabi.me...')">Can't find either? Go to farabi.me</a>
+    
     <script>
-        console.log("Custom 404 page loaded!");
+        function notify(message) {
+            alert(message);
+        }
     </script>
 </body>
 </html>
