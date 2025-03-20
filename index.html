@@ -1,122 +1,64 @@
-/* Import custom fonts */
-@font-face {
-  font-family: 'Panton';
-  src: url('../../fonts/Panton.ttf') format('truetype');
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FARABI.me</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">FARABI.me</span>
+    </div>
+    <div class="nav-right">
+      <a href="/terms" class="nav-link">Terms of Services</a>
+      <a href="/privacy" class="nav-link">Privacy Policy</a>
+    </div>
+  </nav>
 
-@font-face {
-  font-family: 'Gotham';
-  src: url('../../fonts/Gotham.ttf') format('truetype');
-}
+  <!-- Main Content -->
+  <header class="header">
+    <h1 class="main-heading">FARABI.me</h1>
+    <p class="sub-heading">PLAY FREE GAMES AND USE FREE SERVICES</p>
+  </header>
 
-/* General body styles */
-body {
-  margin: 0;
-  font-family: 'Panton', sans-serif;
-  background: #333; /* slightly black/grey mix */
-  color: #f0f0f0;
-}
+  <main>
+    <!-- GAMES Section -->
+    <section class="card-section">
+      <h2 class="section-title">GAMES</h2>
+      <div class="card">
+        <div class="card-content">
+          <a href="https://re-assemble.com" target="_blank">
+            <p class="card-text panton">RE-ASSEMBLE</p>
+            <div class="card-image gotham">
+              <!-- This "image" is represented by text rendered in Gotham -->
+              REASSEMBLE
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <a href="https://wouldyourather.live" target="_blank">
+            <p class="card-text panton">WOULD YOU RATHER</p>
+            <div class="card-image gotham">
+              WOULDYOURATHER
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-/* Navigation bar styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: blue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
-}
+    <!-- SERVICES Section (Placeholder for now) -->
+    <section class="card-section">
+      <h2 class="section-title">SERVICES</h2>
+      <!-- Future cards for SERVICES will go here -->
+      <p style="color:#ccc; text-align:center;">(Services coming soon...)</p>
+    </section>
+  </main>
 
-.nav-left .logo {
-  font-family: 'Panton', sans-serif;
-  font-size: 24px;
-  color: #fff;
-}
-
-.nav-right .nav-link {
-  font-family: 'Gotham', sans-serif;
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-/* Header section */
-.header {
-  padding-top: 80px; /* offset for fixed nav */
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.main-heading {
-  font-family: 'Panton', sans-serif;
-  font-size: 48px;
-  animation: colorchange 8s infinite;
-}
-
-@keyframes colorchange {
-  0%   { color: #ffffff; }
-  50%  { color: #ffb6c1; }
-  100% { color: #ffffff; }
-}
-
-.sub-heading {
-  font-family: 'Panton', sans-serif;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Card sections for GAMES and SERVICES */
-.card-section {
-  padding: 20px;
-  margin: 20px;
-}
-
-.section-title {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Panton', sans-serif;
-}
-
-/* Blurry card style */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 500px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-text {
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-/* Font classes */
-.panton {
-  font-family: 'Panton', sans-serif;
-}
-
-.gotham {
-  font-family: 'Gotham', sans-serif;
-  font-size: 20px;
-  border: 2px dashed #f0f0f0;
-  padding: 10px;
-  margin-top: 10px;
-}
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
