@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain Method</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Open Graph Meta Tags (For Discord Embed) -->
-    <meta property="og:title" content="Domain Method">
-    <meta property="og:description" content="Want to know how Domain Method works and what the requirements are? I got you. Check the website now!">
-    <meta property="og:url" content="https://domain-method.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FARABI.me</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <div class="toggle-container">
-        <input type="checkbox" id="mode-toggle">
-        <label for="mode-toggle" class="toggle-label"></label>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">FARABI.me</span>
     </div>
-
-    <!-- Title -->
-    <h1 class="title">DOMAIN METHOD</h1>
-
-    <!-- Buttons -->
-    <div class="button-container">
-        <a href="https://farabi-ask.net/" target="_blank" class="ask-button">Ask us Question!</a>
-        <a href="#" class="live-chat-button">Live Chat!</a>
+    <div class="nav-right">
+      <a href="/terms" class="nav-link">Terms of Services</a>
+      <a href="/privacy" class="nav-link">Privacy Policy</a>
     </div>
+  </nav>
 
-    <!-- Accordion Container -->
-    <div class="accordion-container">
-        <!-- Accordions will be dynamically added here -->
-    </div>
+  <!-- Main Content -->
+  <header class="header">
+    <h1 class="main-heading">FARABI.me</h1>
+    <p class="sub-heading">PLAY FREE GAMES AND USE FREE SERVICES</p>
+  </header>
 
-    <script src="script.js"></script>
+  <main>
+    <!-- GAMES Section -->
+    <section class="card-section">
+      <h2 class="section-title">GAMES</h2>
+      <div class="card">
+        <div class="card-content">
+          <a href="https://re-assemble.com" target="_blank">
+            <p class="card-text panton">RE-ASSEMBLE</p>
+            <div class="card-image gotham">
+              <!-- This "image" is represented by text rendered in Gotham -->
+              REASSEMBLE
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <a href="https://wouldyourather.live" target="_blank">
+            <p class="card-text panton">WOULD YOU RATHER</p>
+            <div class="card-image gotham">
+              WOULDYOURATHER
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES Section (Placeholder for now) -->
+    <section class="card-section">
+      <h2 class="section-title">SERVICES</h2>
+      <!-- Future cards for SERVICES will go here -->
+      <p style="color:#ccc; text-align:center;">(Services coming soon...)</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
