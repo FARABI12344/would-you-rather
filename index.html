@@ -1,64 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FARABI.me</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation & Footer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-left">
-      <span class="logo">FARABI.me</span>
-    </div>
-    <div class="nav-right">
-      <a href="/terms" class="nav-link">Terms of Services</a>
-      <a href="/privacy" class="nav-link">Privacy Policy</a>
-    </div>
-  </nav>
 
-  <!-- Main Content -->
-  <header class="header">
-    <h1 class="main-heading">FARABI.me</h1>
-    <p class="sub-heading">PLAY FREE GAMES AND USE FREE SERVICES</p>
-  </header>
+    <nav class="navbar">
+        <a href="https://farabi.me">FARABI.me</a>
+        <a href="#">TERMS OF SERVICES</a>
+        <a href="#">PRIVACY POLICY</a>
+    </nav>
 
-  <main>
-    <!-- GAMES Section -->
-    <section class="card-section">
-      <h2 class="section-title">GAMES</h2>
-      <div class="card">
-        <div class="card-content">
-          <a href="https://re-assemble.com" target="_blank">
-            <p class="card-text panton">RE-ASSEMBLE</p>
-            <div class="card-image gotham">
-              <!-- This "image" is represented by text rendered in Gotham -->
-              REASSEMBLE
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <a href="https://wouldyourather.live" target="_blank">
-            <p class="card-text panton">WOULD YOU RATHER</p>
-            <div class="card-image gotham">
-              WOULDYOURATHER
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+    <main>
+        <h1>Welcome to Farabi Games</h1>
+        <p>Your content goes here...</p>
+    </main>
 
-    <!-- SERVICES Section (Placeholder for now) -->
-    <section class="card-section">
-      <h2 class="section-title">SERVICES</h2>
-      <!-- Future cards for SERVICES will go here -->
-      <p style="color:#ccc; text-align:center;">(Services coming soon...)</p>
-    </section>
-  </main>
+    <footer class="footer">
+        <a href="https://farabi.me">FARABI.me</a>
+        <a href="#">TERMS OF SERVICES</a>
+        <a href="#">PRIVACY POLICY</a>
+        <span>support@farabi.me</span>
+    </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
