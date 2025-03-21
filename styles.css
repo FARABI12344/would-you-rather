@@ -1,122 +1,42 @@
-/* Import custom fonts */
 @font-face {
-  font-family: 'Panton';
-  src: url('../../fonts/Panton.ttf') format('truetype');
+    font-family: 'Panton';
+    src: url('assets/Panton.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Gotham';
-  src: url('../../fonts/Gotham.ttf') format('truetype');
-}
-
-/* General body styles */
 body {
-  margin: 0;
-  font-family: 'Panton', sans-serif;
-  background: #333; /* slightly black/grey mix */
-  color: #f0f0f0;
+    font-family: 'Panton', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Navigation bar styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: blue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
+.navbar, .footer {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
 }
 
-.nav-left .logo {
-  font-family: 'Panton', sans-serif;
-  font-size: 24px;
-  color: #fff;
+.navbar a, .footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-.nav-right .nav-link {
-  font-family: 'Gotham', sans-serif;
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
+.navbar a:hover, .footer a:hover {
+    color: #00aaff;
 }
 
-/* Header section */
-.header {
-  padding-top: 80px; /* offset for fixed nav */
-  text-align: center;
-  margin-bottom: 40px;
+.footer {
+    margin-top: auto;
+    flex-wrap: wrap;
 }
 
-.main-heading {
-  font-family: 'Panton', sans-serif;
-  font-size: 48px;
-  animation: colorchange 8s infinite;
-}
-
-@keyframes colorchange {
-  0%   { color: #ffffff; }
-  50%  { color: #ffb6c1; }
-  100% { color: #ffffff; }
-}
-
-.sub-heading {
-  font-family: 'Panton', sans-serif;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Card sections for GAMES and SERVICES */
-.card-section {
-  padding: 20px;
-  margin: 20px;
-}
-
-.section-title {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Panton', sans-serif;
-}
-
-/* Blurry card style */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 500px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-text {
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-/* Font classes */
-.panton {
-  font-family: 'Panton', sans-serif;
-}
-
-.gotham {
-  font-family: 'Gotham', sans-serif;
-  font-size: 20px;
-  border: 2px dashed #f0f0f0;
-  padding: 10px;
-  margin-top: 10px;
+.footer span {
+    color: #ccc;
 }
