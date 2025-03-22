@@ -27,7 +27,6 @@ body {
     z-index: 1000;
 }
 
-/* Farabi.me Logo */
 .logo {
     font-size: 2rem;
     font-weight: bold;
@@ -39,30 +38,35 @@ body {
 .farabi {
     color: white;
     font-family: 'Panton', Helvetica, sans-serif;
-    text-shadow: 2px 2px 0px black;
+    -webkit-text-stroke: 2px black, 1px grey;
 }
 
 .dot-me {
     color: cyan;
-    text-shadow: 2px 2px 0px black;
+    -webkit-text-stroke: 2px black, 1px grey;
 }
 
 /* Navigation Links */
-.nav-right a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 20px;
-    text-shadow: 1px 1px 0px black;
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
-.nav-right a:hover {
-    color: black;
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* ----- MAIN CONTENT SPACING ----- */
 .content {
+    flex: 1;
     padding-top: 80px;
     min-height: 70vh;
 }
@@ -76,6 +80,7 @@ body {
     align-items: center;
     padding: 20px 30px;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .footer-left {
@@ -96,16 +101,21 @@ body {
     text-decoration: none;
 }
 
-.footer-right a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 20px;
+.footer-right {
+    display: flex;
+    align-items: center;
 }
 
-.footer-right a:hover {
-    color: cyan;
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* ----- RESPONSIVE DESIGN ----- */
@@ -119,6 +129,11 @@ body {
         margin-top: 10px;
     }
 
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .footer {
         flex-direction: column;
         text-align: center;
@@ -126,5 +141,10 @@ body {
 
     .footer-left, .footer-right {
         margin-bottom: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
