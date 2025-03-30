@@ -3,45 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farabi Navigation & Footer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Image Generator</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .prompt {
+            width: 60%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #ff6f61;
+            border-radius: 8px;
+        }
+        .output {
+            margin-top: 20px;
+            width: 80%;
+            height: 250px;
+            border: 2px dashed white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff6f61;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="https://farabi.me" class="logo">
-                <span class="farabi">FARABI</span><span class="dot-me">.me</span>
-            </a>
-        </div>
-        <div class="nav-right">
-            <div class="nav-links">
-                <a href="#">Terms of Services</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-        </div>
-    </nav>
+    <h1>IMAGE GENERATOR</h1>
+    <h2>by Pollinations AI</h2>
 
-    <!-- Main Content -->
-    <div class="content"> <!-- This is for spacing -->
+    <div class="prompt">
+        <input type="text" id="userInput" placeholder="Enter your prompt here">
+        <select id="typeSelector">
+            <option value="banner">Banner</option>
+            <option value="logo">Logo</option>
+        </select>
+        <button onclick="generateImage()">Generate Image</button>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-left">
-            <a href="mailto:support@farabi.me" class="support-email">support@farabi.me</a>
-            <a href="https://farabi.me" class="footer-logo">
-                <span class="farabi">FARABI</span><span class="dot-me">.me</span>
-            </a>
-        </div>
-        <div class="footer-right">
-            <div class="footer-links">
-                <a href="#">Terms of Services</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
+    <p>It may take time to generate</p>
+
+    <div class="output" id="output">
+        banner/logo here
+    </div>
+
+    <script>
+        function generateImage() {
+            const prompt = document.getElementById('userInput').value;
+            const type = document.getElementById('typeSelector').value;
+
+            let imageUrl;
+            if (type === 'banner') {
+                imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1920&height=1080&seed=36&enhance=true&nologo=true&model=flux-pro`;
+            } else {
+                imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=500&height=500&seed=36&enhance=true&nologo=true&model=flux-pro`;
+            }
+
+            document.getElementById('output').innerHTML = `<img src="${imageUrl}" alt="Generated Image" style="max-width: 100%; height: auto;">`;
+        }
+    </script>
 
 </body>
 </html>
